@@ -34,8 +34,6 @@ def guessLine2():
     else:
         print numFaces
         print numReg
-        if guess == "1":
-            print "Yeah it works"
         print "You advanced to the next row!"
 
 def guessLine3():
@@ -55,7 +53,11 @@ def guessLine3():
     elif guess == 3 and X3 > 38:
         print "You picked a face card, better luck next time"
         sys.exit()
-
+    else:
+        print numFaces
+        print numReg
+        print "You advanced to the next row!" 
+ 
 def guessLine4():
     guess = int(input("Enter a number: "))
     X1 = random.randint(0+numReg,53-numFaces)
@@ -78,7 +80,11 @@ def guessLine4():
     elif guess == 4 and X4 > 38:
         print "You picked a face card, better luck next time"
         sys.exit()
-
+    else:
+        print numFaces
+        print numReg
+        print "You advanced to the next row!" 
+       
 MAX_FACES = 16
 numFaces = 0
 numReg = 0
@@ -128,3 +134,5 @@ print twoXline, "(6)"
 print "   1 2"
 print
 guessLine2()
+
+print "You won!!!!1!!!"
