@@ -20,10 +20,10 @@ def adjustCards(X):
         numReg = numReg + 1
 
 def guessLine2():
-    guess = sys.stdin.readline()
-    X1 = random.randrange(0+numReg,53-numFaces)
+    guess = int(input("Enter a number: "))
+    X1 = random.randint(0+numReg,53-numFaces)
     adjustCards(X1)
-    X2 = random.randrange(0+numReg,53-numFaces)
+    X2 = random.randint(0+numReg,53-numFaces)
     adjustCards(X2)
     if guess == 1 and X1 > 38:
         print "You picked a face card, better luck next time"
@@ -31,14 +31,20 @@ def guessLine2():
     elif guess == 2 and X2 > 38:
         print "You picked a face card, better luck next time"
         sys.exit()
+    else:
+        print numFaces
+        print numReg
+        if guess == "1":
+            print "Yeah it works"
+        print "You advanced to the next row!"
 
 def guessLine3():
-    guess = sys.stdin.readline()
-    X1 = random.randrange(0+numReg,53-numFaces)
+    guess = int(input("Enter a number: "))
+    X1 = random.randint(0+numReg,53-numFaces)
     adjustCards(X1)
-    X2 = random.randrange(0+numReg,53-numFaces)
+    X2 = random.randint(0+numReg,53-numFaces)
     adjustCards(X2)
-    X3 = random.randrange(0+numReg,53-numFaces)
+    X3 = random.randint(0+numReg,53-numFaces)
     adjustCards(X3)
     if guess == 1 and X1 > 38:
         print "You picked a face card, better luck next time"
@@ -51,14 +57,14 @@ def guessLine3():
         sys.exit()
 
 def guessLine4():
-    guess = sys.stdin.readline()
-    X1 = random.randrange(0+numReg,53-numFaces)
+    guess = int(input("Enter a number: "))
+    X1 = random.randint(0+numReg,53-numFaces)
     adjustCards(X1)
-    X2 = random.randrange(0+numReg,53-numFaces)
+    X2 = random.randint(0+numReg,53-numFaces)
     adjustCards(X2)
-    X3 = random.randrange(0+numReg,53-numFaces)
+    X3 = random.randint(0+numReg,53-numFaces)
     adjustCards(X3)
-    X4 = random.randrange(0+numReg,53-numFaces)
+    X4 = random.randint(0+numReg,53-numFaces)
     adjustCards(X4)
     if guess == 1 and X1 > 38:
         print "You picked a face card, better luck next time"
@@ -96,35 +102,29 @@ print
 print twoXline, "(1)"
 print "   1 2"
 print
-print "Card Guess:"
 guessLine2()
 print
 print threeXline, "(2)"
 print "  1 2 3"
 print
-print "Card Guess:"
 guessLine3()
 print
 print fourXline, "(3)"
 print " 1 2 3 4"
 print
-print "Card Guess:"
 guessLine4()
 print
 print fourXline, "(4)"
 print " 1 2 3 4"
 print
-print "Card Guess:"
 guessLine4()
 print
 print threeXline, "(5)"
 print "  1 2 3"
 print
-print "Card Guess:"
 guessLine3()
 print
 print twoXline, "(6)"
 print "   1 2"
 print
-print "Card Guess:"
 guessLine2()
