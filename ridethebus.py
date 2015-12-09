@@ -11,6 +11,7 @@ def printBoard():
     print threeXline, "(2)"
     print twoXline, "(1)"
 
+#Adjust the current number of face cards and non-face cards in the deck
 def adjustCards(X):
     global numFaces
     global numReg
@@ -19,6 +20,10 @@ def adjustCards(X):
     else:
         numReg = numReg + 1
 
+#Takes in user input, and checks if the card they drew was a face card
+#If so, end the game, otherwise, advance to the next row
+
+#For 2 cards in a row
 def guessLine2():
     guess = int(input("Enter a number: "))
     X1 = random.randint(0+numReg,53-numFaces)
@@ -32,10 +37,9 @@ def guessLine2():
         print "You picked a face card, better luck next time"
         sys.exit()
     else:
-        print numFaces
-        print numReg
         print "You advanced to the next row!"
 
+#For 3 cards in a row
 def guessLine3():
     guess = int(input("Enter a number: "))
     X1 = random.randint(0+numReg,53-numFaces)
@@ -54,10 +58,9 @@ def guessLine3():
         print "You picked a face card, better luck next time"
         sys.exit()
     else:
-        print numFaces
-        print numReg
         print "You advanced to the next row!" 
  
+#For 4 cards in a row
 def guessLine4():
     guess = int(input("Enter a number: "))
     X1 = random.randint(0+numReg,53-numFaces)
@@ -81,14 +84,12 @@ def guessLine4():
         print "You picked a face card, better luck next time"
         sys.exit()
     else:
-        print numFaces
-        print numReg
         print "You advanced to the next row!" 
        
-MAX_FACES = 16
-numFaces = 0
-numReg = 0
-twoXline = "   X X  "
+MAX_FACES = 16 #Maximum number of face cards in a deck
+numFaces = 0 #Current number of faces in a deck
+numReg = 0 #Maximum number of non-face cards
+twoXline = "   X X  " 
 threeXline =  "  X X X " 
 fourXline = " X X X X"
 
@@ -103,36 +104,50 @@ print "If a face card (Jack, Queen, King, or Ace), is picked, the game is over"
 print "The goal is to get to end of the six rows without drawing a face card."
 print "To choose a card, type the number that appears below the card and press enter"
 
+#Main body for the game
 print "GAME START:"
 print
+
+#First line
 print twoXline, "(1)"
 print "   1 2"
 print
 guessLine2()
 print
+
+#Second line
 print threeXline, "(2)"
 print "  1 2 3"
 print
 guessLine3()
 print
+
+#Thirt line
 print fourXline, "(3)"
 print " 1 2 3 4"
 print
 guessLine4()
 print
+
+#Fourth line
 print fourXline, "(4)"
 print " 1 2 3 4"
 print
 guessLine4()
 print
+
+#Fifth line
 print threeXline, "(5)"
 print "  1 2 3"
 print
 guessLine3()
 print
+
+#Sixth line
 print twoXline, "(6)"
 print "   1 2"
 print
 guessLine2()
 
+#user won
 print "You won!!!!1!!!"
